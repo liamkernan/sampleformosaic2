@@ -1,6 +1,6 @@
 # Mosaic Demo Service
 
-This repository is a local playground for testing Mosaic against a realistic
+This repository is a new local playground for testing Mosaic against a realistic
 database-backed service. The app models a small support intake system where
 requests arrive from Slack, email, or a web form, are triaged, and then closed
 after a fix is shipped.
@@ -90,4 +90,3 @@ Closes a request with optional JSON:
   "note": "Fixed in PR #42"
 }
 ```
-
