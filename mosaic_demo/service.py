@@ -146,7 +146,7 @@ def list_requests(
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
     order_by = "sr.created_at DESC"
     if sort == "sla":
-        order_by = "sr.created_at ASC"
+        order_by = "sr.sla_due_at ASC, sr.id ASC"
     elif sort == "priority":
         order_by = """
         CASE sr.priority
@@ -225,4 +225,3 @@ def audit_log(conn: sqlite3.Connection, request_id: int) -> list[dict[str, Any]]
         (request_id,),
     ).fetchall()
     return [row_to_dict(row) for row in rows]
-
